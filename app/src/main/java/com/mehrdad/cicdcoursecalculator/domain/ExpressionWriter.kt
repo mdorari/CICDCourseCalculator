@@ -38,7 +38,7 @@ class ExpressionWriter {
 
     private fun prepareForCalculation(): String {
         //remove any operation, open parentheses and . from end of expression
-        val newExpression = expression.takeLastWhile {
+        val newExpression = expression.dropLastWhile {
             it in "$operationSymbols(."
         }
         if(newExpression.isEmpty()){
